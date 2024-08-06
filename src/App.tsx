@@ -12,12 +12,4 @@ const App: React.FC = () => {
 
 export default App;
 
-function App() {
-  return (
-    <>
-     Hello World!
-    </>
-  )
-}
 
-export default App
