@@ -33,6 +33,13 @@ const RocketList: React.FC = () => {
                     <li key={rocket.id}>
                         <h2>{rocket.name}</h2>
                         <p>{rocket.description}</p>
+                        {rocket.flickr_images && rocket.flickr_images.length > 0 && (
+                            <div>
+                                {rocket.flickr_images.map((image, index) => (
+                                    <img key={index} src={image} alt={`${rocket.name} image ${index +1}`} width="300" />
+                                ))}
+                            </div>
+                        )}
                     </li>
                 ))}
             </ul>

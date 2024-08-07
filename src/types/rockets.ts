@@ -10,4 +10,5 @@ export interface Rocket {
     first_flight: string;
     country: string;
     company: string;
+    flickr_images: string[];
 }
