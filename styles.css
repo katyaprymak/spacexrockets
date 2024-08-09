@@ -13,6 +13,37 @@ body {
 }
 
 .rocket-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.rocket-card:hover {
+  transform: traanslateY(-10px);
+}
+
+.rocket-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.rocket.-card .rocket-details {
+  padding: 1rem;
+}
+
+.rocket-card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.rocket.card p {
+  margin: 0.5rem 0;
+  color: #555;
 }
 
 header {
