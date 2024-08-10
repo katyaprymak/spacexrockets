@@ -26,25 +26,18 @@ const RocketList: React.FC = () => {
     if (error) return <div>{error}</div>;
 
     return (
-        <div>
-            <h1>SpaceX Rockets</h1>
-            <ul>
-                {rockets.map((rocket) => (
-                    <li key={rocket.id}>
+        <div className="rockets-container">
+            {rockets.map((rocket) => (
+                <div key={rocket.id} className="rocket-card">
+                    <img src={rocket.flickr_images[0]} alt={`${rocket.name}`} />
+                    <div className="rocket-details">
                         <h2>{rocket.name}</h2>
                         <p>{rocket.description}</p>
-                        {rocket.flickr_images && rocket.flickr_images.length > 0 && (
-                            <div>
-                                {rocket.flickr_images.map((image, index) => (
-                                    <img key={index} src={image} alt={`${rocket.name} image ${index +1}`} width="300" />
-                                ))}
-                            </div>
-                        )}
-                    </li>
-                ))}
-            </ul>
+                    </div>
+                </div>
+            ))}
         </div>
     );
 };
-
+                  
 export default RocketList;

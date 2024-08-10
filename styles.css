@@ -1,3 +1,25 @@
+/*header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: white;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  transform: translate(0);
+}
+*/
+
+main {
+  padding-top: 4rem;
+}
+
+main h1 {
+  font-size: 2rem;
+  margin: 0;
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -17,13 +39,14 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 1rem;
-  width: 300px;
+  width: calc(50% - 2rem);
+  max-width: 300px;
   overflow: hidden;
   transition: transform 0.3s;
 }
 
 .rocket-card:hover {
-  transform: traanslateY(-10px);
+  transform: translateY(-10px);
 }
 
 .rocket-card img {
@@ -41,16 +64,9 @@ body {
   font-size: 1.5rem;
 }
 
-.rocket.card p {
+.rocket-card p {
   margin: 0.5rem 0;
   color: #555;
-}
-
-header {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
 }
 
 footer {
@@ -61,4 +77,10 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+@media (maax-width: 768px) {
+  .rocket-card {
+    width: calc(100% - 2 rem);
+  }
 }
