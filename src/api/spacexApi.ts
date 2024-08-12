@@ -11,7 +11,7 @@ export const fetchRockets = async () => {
         const response = await api.get('/rockets');
         return response.data;
     } catch (error) {
-        console.error('Error fetching rockets:', error.responnse || error.message || error);
+        console.error('Error fetching rockets:', error.response || error.message || error);
         throw error;
     }
 };
