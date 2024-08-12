@@ -5,39 +5,13 @@ body {
   background-color: #f4f4f4;
 }
 
-/*header {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-  transform: translate(0);
-}*/
-
-main {
-  padding-top: 5rem;
-}
-
-.rockets-container {
+.rockets-container,
+.rocket-detail-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 2rem;
-}
-
-.rocket-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 1rem;
-  width: caalc(50% - 2rem);
-  max-width: 300px;
-  overflow: hidden;
-  transition: tranform 0.3s;
+  padding-bottom: 5rem; /* Add padding to prevent overlap with the footer */
 }
 
 .rocket-card {
@@ -61,16 +35,19 @@ main {
   object-fit: cover;
 }
 
-.rocket.-card .rocket-details {
+.rocket-details,
+.rocket-detail-container {
   padding: 1rem;
 }
 
-.rocket-card h2 {
+.rocket-card h2,
+.rocket-detail-container h2 {
   margin: 0;
   font-size: 1.5rem;
 }
 
-.rocket-card p {
+.rocket-card p,
+.rocket-detail-container p {
   margin: 0.5rem 0;
   color: #555;
 }
@@ -85,8 +62,35 @@ footer {
   bottom: 0;
 }
 
-@media (maax-width: 768px) {
+.rocket-detail-container {
+  padding: 2rem;
+  padding-bottom: 6rem;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.rocket-detail-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Adjust max-height to ensure the image isn't too large */
+  object-fit: cover;
+  margin-bottom: 1rem; /* Space between image and text */
+  border-radius: 10px;
+}
+
+.rocket-detail-container h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.rocket-detail-container p {
+  margin: 1rem 0;
+  color: #555;
+}
+
+@media (max-width: 768px) {
   .rocket-card {
-    width: calc(100% - 2 rem);
+    width: calc(100% - 2rem);
   }
 }
