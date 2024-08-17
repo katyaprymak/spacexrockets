@@ -1,10 +1,4 @@
-import axios from "axios";
-
-const BASE_URL = "https://api.spacexdata.com/v4";
-
-const api = axios.create({
-  baseURL: BASE_URL,
-});
+import api from "./apiService";
 
 export const fetchRockets = async () => {
   try {

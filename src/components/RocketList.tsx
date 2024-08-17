@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchRockets } from "../api/spacexApi";
+import { fetchRockets } from "../api/rocketService.ts";
 import { Rocket } from "../types/rocket";
 import { useNavigate } from "react-router-dom";
 

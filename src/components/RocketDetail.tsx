@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Rocket } from "../types/rocket";
-import { fetchRockets } from "../api/spacexApi";
+import { fetchRockets } from "../api/rocketService.ts";
 
 const RocketDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
