@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { fetchRockets } from "../api/rocketService.ts";
 import { Rocket } from "../types/rocket";
-import { useNavigate } from "react-router-dom";
 
 const RocketList: React.FC = () => {
   const [rockets, setRockets] = useState<Rocket[]>([]); // Ensure initial state is an empty array
@@ -13,7 +13,7 @@ const RocketList: React.FC = () => {
     const getRockets = async () => {
       try {
         const rocketData = await fetchRockets();
-        console.log("Fetched rocket daata:", rocketData);
+        console.log("Fetched rocket data:", rocketData);
         setRockets(rocketData || []); // Set rockets to an empty array if rocketData is null/undefined
       } catch (err) {
         console.error("Error fetching rockets:", err);
