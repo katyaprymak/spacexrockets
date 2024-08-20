@@ -89,6 +89,10 @@ footer {
   color: #555;
 }
 
+.rocket-card {
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .rocket-card {
     width: calc(100% - 2rem);
