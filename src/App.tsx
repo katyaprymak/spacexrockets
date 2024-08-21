@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import RocketList from "./components/RocketList";
-import RocketDetail from "./components/RocketDetail";
+import RocketList from "./pages/RocketList";
+import RocketDetail from "./pages/RocketDetail";
 
 const App: React.FC = () => {
   return (

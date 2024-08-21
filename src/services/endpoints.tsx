@@ -1,4 +1,4 @@
-import api from "./apiService";
+import api from "./httpService";
 
 export const fetchRockets = async () => {
   try {
