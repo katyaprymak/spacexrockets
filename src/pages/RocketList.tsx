@@ -2,19 +2,21 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useSWR from "swr";
 import { fetcher } from "../utils.ts";
-import { fetchRockets } from "../services/endpoints.tsx";
+/*import { fetchRockets } from "../services/endpoints.tsx";*/
 import { Rocket } from "../types/rocket";
 
 const RocketList: React.FC = () => {
   const navigate = useNavigate();
-  const { data: rockets, error } = useSWR<Rocket[], Error>(
-    import.meta.env.VITE_BASE_URL,
-    fetcher
-  );
+  const {
+    data: rockets,
+    error,
+    isLoading,
+  } = useSWR<Rocket[], Error>(import.meta.env.VITE_BASE_URL, fetcher);
 
+  if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Failed to fetch rockets</div>;
-
-  if (!rockets) return <div>ERROR: No rockets found</div>;
+  if (!rockets || rockets.length === 0)
+    return <div>ERROR: no rockets found</div>;
 
   return (
     <div className="rockets-container">

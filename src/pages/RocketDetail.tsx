@@ -2,16 +2,21 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import { fetcher } from "../utils.ts";
-import { fetchRockets } from "../services/endpoints.tsx";
+/*import { fetchRockets } from "../services/endpoints.tsx";*/
 import { Rocket } from "../types/rocket";
 
 const RocketDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const URL = `https://api.spacexdata.com/v4/rockets/${id}`;
-  const { data: rocket, error } = useSWR<Rocket | null, Error>(URL, fetcher);
+  const {
+    data: rocket,
+    error,
+    isLoading,
+  } = useSWR<Rocket | null, Error>(URL, fetcher);
 
+  if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Failed to fetch rocket details</div>;
-  if (!rocket) return <div>Loading...</div>;
+  if (!rocket) return <div>ERROR: no rocket found</div>;
 
   return (
     <div className="rocket-detail-container">
